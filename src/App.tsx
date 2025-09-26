@@ -5,6 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
+import Issues from "./pages/Issues";
+import Analytics from "./pages/Analytics";
+import MapView from "./pages/MapView";
+import Users from "./pages/Users";
+import Settings from "./pages/Settings";
 import { DashboardLayout } from "./components/DashboardLayout";
 import NotFound from "./pages/NotFound";
 
@@ -30,7 +35,7 @@ const App = () => (
             path="/issues" 
             element={
               <DashboardLayout>
-                <Dashboard />
+                <Issues />
               </DashboardLayout>
             } 
           />
@@ -38,7 +43,7 @@ const App = () => (
             path="/analytics" 
             element={
               <DashboardLayout>
-                <Dashboard />
+                <Analytics />
               </DashboardLayout>
             } 
           />
@@ -46,7 +51,7 @@ const App = () => (
             path="/map" 
             element={
               <DashboardLayout>
-                <Dashboard />
+                <MapView />
               </DashboardLayout>
             } 
           />
@@ -54,7 +59,7 @@ const App = () => (
             path="/users" 
             element={
               <DashboardLayout>
-                <Dashboard />
+                <Users />
               </DashboardLayout>
             } 
           />
@@ -62,7 +67,7 @@ const App = () => (
             path="/settings" 
             element={
               <DashboardLayout>
-                <Dashboard />
+                <Settings />
               </DashboardLayout>
             } 
           />

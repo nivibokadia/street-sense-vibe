@@ -57,93 +57,102 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 hero-gradient"></div>
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Professional overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-800/90"></div>
       
-      {/* Floating Elements */}
-      <FloatingElements />
+      {/* Subtle geometric pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-32 h-32 border border-white/20 rounded-lg rotate-12"></div>
+        <div className="absolute bottom-32 right-20 w-24 h-24 border border-white/10 rounded-lg -rotate-12"></div>
+        <div className="absolute top-1/2 left-10 w-16 h-16 border border-white/15 rounded-lg rotate-45"></div>
+      </div>
       
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            {/* Badge */}
-            <Badge variant="secondary" className="mb-6 animate-bounce-in bg-white/20 text-white border-white/30">
+            {/* Professional Badge */}
+            <Badge variant="outline" className="mb-8 bg-white/5 text-white border-white/20 hover:bg-white/10">
               <Zap className="h-4 w-4 mr-2" />
-              Transparency & Results
+              Municipal Management Platform
             </Badge>
             
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="block animate-bounce-in">Civic Issues,</span>
-              <span className="block animate-bounce-in text-primary-glow" style={{ animationDelay: '0.2s' }}>
-                Sorted.
-              </span>
-              <span className="block animate-bounce-in text-accent" style={{ animationDelay: '0.4s' }}>
-                Together.
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <span className="block">StreetSense</span>
+              <span className="block text-slate-300 text-3xl md:text-5xl font-medium mt-2">
+                Civic Administration
               </span>
             </h1>
             
             {/* Subtitle */}
-            <p className="text-xl text-white/90 mb-8 max-w-lg animate-bounce-in" style={{ animationDelay: '0.6s' }}>
-              Transform civic engagement with StreetSense - where community issues meet lightning-fast resolution through colorful, intelligent admin tools.
+            <p className="text-lg text-slate-300 mb-8 max-w-lg leading-relaxed">
+              Streamlined municipal issue management system for efficient civic administration. 
+              Monitor, track, and resolve community concerns with data-driven insights.
             </p>
             
             {/* CTA Button */}
-            <div className="animate-bounce-in" style={{ animationDelay: '0.8s' }}>
+            <div className="mb-12">
               <Button 
-                variant="hero" 
+                variant="default" 
                 size="lg" 
-                className="text-lg px-8 py-4"
+                className="text-lg px-8 py-4 bg-white text-slate-900 hover:bg-slate-100"
                 onClick={handleAdminLogin}
               >
                 <MapPin className="h-5 w-5 mr-2" />
-                Login as Admin
+                Access Dashboard
               </Button>
             </div>
             
-            {/* Stats */}
-            <div className="mt-12">
-              <AnimatedStats />
+            {/* Professional Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">2,847</div>
+                <div className="text-sm text-slate-400">Issues Resolved</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">156</div>
+                <div className="text-sm text-slate-400">Active Wards</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">98%</div>
+                <div className="text-sm text-slate-400">SLA Compliance</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white">24h</div>
+                <div className="text-sm text-slate-400">Avg Response</div>
+              </div>
             </div>
           </div>
           
-          {/* Right Content - Hero Image */}
-          <div className="relative animate-bounce-in" style={{ animationDelay: '1s' }}>
-            <div className="relative">
+          {/* Right Content - Professional Showcase */}
+          <div className="relative">
+            <div className="relative bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
               <img
                 src={heroCity}
-                alt="StreetSense City Dashboard"
-                className="w-full h-auto rounded-2xl shadow-glow"
+                alt="StreetSense Dashboard Preview"
+                className="w-full h-auto rounded-lg opacity-90"
               />
               
-              {/* Overlay Elements */}
-              <div className="absolute top-4 right-4">
-                <div className="bg-success/90 text-white px-3 py-2 rounded-lg text-sm font-medium animate-pulse-glow">
-                  ✅ Issue Resolved!
+              {/* Status indicators */}
+              <div className="absolute top-12 right-12">
+                <div className="bg-green-600/90 text-white px-3 py-1 rounded text-sm">
+                  System Online
                 </div>
               </div>
               
-              <div className="absolute bottom-4 left-4">
-                <div className="bg-urgent/90 text-white px-3 py-2 rounded-lg text-sm font-medium animate-pulse-glow">
-                  🚨 SLA Warning
+              <div className="absolute bottom-12 left-12">
+                <div className="bg-blue-600/90 text-white px-3 py-1 rounded text-sm">
+                  Real-time Monitoring
                 </div>
               </div>
-              
-              {/* Floating pins */}
-              <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-primary rounded-full animate-pulse-glow shadow-glow"></div>
-              <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-accent rounded-full animate-pulse-glow shadow-accent"></div>
-              <div className="absolute bottom-1/3 left-1/2 w-4 h-4 bg-success rounded-full animate-pulse-glow"></div>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
     </section>
   );
 };

@@ -114,11 +114,11 @@ export const TicketCard = ({
           
           {/* Actions */}
           <div className="flex gap-2 pt-2">
-            <Button size="sm" variant="outline" className="flex-1">
+            <Button size="sm" variant="outline" className="flex-1" onClick={() => console.log("View details:", id)}>
               View Details
             </Button>
             {status !== "resolved" && (
-              <Button size="sm" variant="default" className="flex-1">
+              <Button size="sm" variant="default" className="flex-1" onClick={() => console.log(status === "urgent" ? "Resolve" : "Assign", id)}>
                 {status === "urgent" ? "Resolve" : "Assign"}
               </Button>
             )}

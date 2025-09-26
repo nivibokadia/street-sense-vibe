@@ -10,7 +10,7 @@ const mockTickets = [
     title: "Pothole on Main Street",
     description: "Large pothole causing traffic issues and potential vehicle damage",
     status: "urgent" as const,
-    location: "Main St & 5th Ave",
+    location: "S.V. Road & Hill Road, Bandra West, Mumbai",
     assignedTo: "John Smith",
     priority: "high" as const,
     createdAt: "2 hours ago",
@@ -21,7 +21,7 @@ const mockTickets = [
     title: "Broken Streetlight",
     description: "Streetlight not working, creating safety concerns for pedestrians",
     status: "pending" as const,
-    location: "Park Ave & 12th St",
+    location: "Marine Drive, Mumbai",
     priority: "medium" as const,
     createdAt: "5 hours ago",
     slaHours: 24
@@ -31,7 +31,7 @@ const mockTickets = [
     title: "Graffiti Cleanup Request",
     description: "Multiple graffiti tags on public building requiring removal",
     status: "resolved" as const,
-    location: "City Hall Building",
+    location: "Chhatrapati Shivaji Terminus, Mumbai",
     assignedTo: "Maria Garcia",
     priority: "low" as const,
     createdAt: "1 day ago",
@@ -42,7 +42,7 @@ const mockTickets = [
     title: "Water Main Issue",
     description: "Suspected water main leak causing flooding on residential street",
     status: "escalated" as const,
-    location: "Oak St & 3rd Ave",
+    location: "Colaba Causeway, Mumbai",
     assignedTo: "Emergency Team",
     priority: "high" as const,
     createdAt: "30 minutes ago",
@@ -101,18 +101,18 @@ export default function Dashboard() {
               <CardTitle>Quick Actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <Button variant="accent" className="w-full justify-start">
-                <Plus className="h-4 w-4 mr-2" />
-                Create New Issue
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <MapPin className="h-4 w-4 mr-2" />
-                View Map
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <Filter className="h-4 w-4 mr-2" />
-                Generate Report
-              </Button>
+          <Button variant="accent" className="w-full justify-start" onClick={() => console.log("Create new issue")}>
+            <Plus className="h-4 w-4 mr-2" />
+            Create New Issue
+          </Button>
+          <Button variant="outline" className="w-full justify-start" onClick={() => window.location.href = "/map"}>
+            <MapPin className="h-4 w-4 mr-2" />
+            View Map
+          </Button>
+          <Button variant="outline" className="w-full justify-start" onClick={() => console.log("Generate report")}>
+            <Filter className="h-4 w-4 mr-2" />
+            Generate Report
+          </Button>
             </CardContent>
           </Card>
 
